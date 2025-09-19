@@ -52,14 +52,6 @@ public enum BrowserFactory {
 
             options.setAcceptInsecureCerts(true);
 
-            if (Boolean.valueOf(FrameworkConstants.HEADLESS) == true) {
-                options.addArguments("--headless=new");
-                options.addArguments("--disable-gpu");
-                options.addArguments("--no-sandbox");
-                options.addArguments("--disable-dev-shm-usage");
-                options.addArguments("--window-size=1550,900");
-            }
-
             return options;
         }
     }, EDGE {
@@ -89,14 +81,6 @@ public enum BrowserFactory {
 
             options.setAcceptInsecureCerts(true);
 
-            if (Boolean.valueOf(FrameworkConstants.HEADLESS) == true) {
-                options.addArguments("--headless=new");
-                options.addArguments("--disable-gpu");
-                options.addArguments("--no-sandbox");
-                options.addArguments("--disable-dev-shm-usage");
-                options.addArguments("--window-size=1550,900");
-            }
-
             return options;
         }
     }, FIREFOX {
@@ -113,12 +97,6 @@ public enum BrowserFactory {
 
             options.setAcceptInsecureCerts(true);
 
-            if (Boolean.valueOf(FrameworkConstants.HEADLESS) == true) {
-                options.addArguments("-headless");
-                options.addArguments("--width=1550");
-                options.addArguments("--height=900");
-            }
-
             return options;
         }
     }, SAFARI {
@@ -133,9 +111,6 @@ public enum BrowserFactory {
         public SafariOptions getOptions() {
             SafariOptions options = new SafariOptions();
             options.setAutomaticInspection(false);
-
-            if (TRUE.equals(Boolean.valueOf(FrameworkConstants.HEADLESS)))
-                throw new HeadlessNotSupportedException(options.getBrowserName());
 
             return options;
         }
