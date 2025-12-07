@@ -10,7 +10,7 @@ import com.anhtester.projects.cms.CommonPageCMS;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ThreadGuard;
 import org.testng.annotations.*;
-
+//This is for ai for testers batch
 @Listeners({TestListener.class})
 public class BaseTest extends CommonPageCMS {
 
